@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+
+
+<div class="page-content">
+     <div class="container-fluid">
+
+          <!-- start page title -->
+          <div class="page-title-box">
+               <div class="row align-items-center">
+                    <div class="col-md-8">
+                         <h6 class="page-title">Ajouter Recommandation</h6>
+                         <ol class="breadcrumb m-0">
+                              <li class="breadcrumb-item"><a href="/home">Pharmachain</a></li>
+                              <li class="breadcrumb-item"><a>Forms</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">Ajouter Recommandation</li>
+                         </ol>
+                    </div>
+
+               </div>
+          </div>
+
+
+
+
+          <div class="row">
+               <div class="col-12 ">
+                    <div class="card">
+                         <div class="card-body">
+                              <form class="form-validate" method='post' enctype="multipart/form-data" action="/save_addrec">
+							
+                              <div class="row mb-3">
+                                   <label for="titre" class="col-sm-2 col-form-label">Titre :</label>
+                                   <div class="col-sm-10">
+                                        <input required class="form-control" type="text" id="titre" name="titre">
+                                   </div>
+                              </div>
+                              <div class="row mb-3">
+                                   <label for="domaine" class="col-sm-2 col-form-label">Domaine :</label>
+                                   <div class="col-sm-10">
+                                        <input required class="form-control" type="text" id="domaine" name="domaine">
+                                   </div>
+                              </div>
+                              <div class="row mb-3">
+                                   <label for="specification" class="col-sm-2 col-form-label">Specification
+                                        :</label>
+                                   <div class="col-sm-10">
+                                        <input required class="form-control" type="text" id="specification" name="specification">
+                                   </div>
+                              </div>
+                              <div class="row mb-3">
+                                   <label for="description" class="col-sm-2 col-form-label">Description :</label>
+                                   <div class="col-sm-10">
+                                        <input required class="form-control" type="text" id="description" name="description">
+                                   </div>
+                              </div>
+
+                              <!-- Edhouma types o5ryn te3 input ! -->
+
+                              <!-- <div class="row mb-3">
+                                       <label for="example-password-input" class="col-sm-2 col-form-label">Password</label>
+                                       <div class="col-sm-10">
+                                           <input class="form-control" type="password" id="example-password-input">
+                                       </div>
+                                   </div>
+                                   <div class="row mb-3">
+                                       <label for="example-number-input" class="col-sm-2 col-form-label">Number</label>
+                                       <div class="col-sm-10">
+                                           <input class="form-control" type="number" value="42" id="example-number-input">
+                                       </div>
+                                   </div>
+                                   <div class="row mb-3">
+                                       <label for="example-datetime-local-input" class="col-sm-2 col-form-label">Date and time</label>
+                                       <div class="col-sm-10">
+                                           <input class="form-control" type="datetime-local" value="2020-08-04T13:45:00" id="example-datetime-local-input">
+                                       </div>
+                                   </div> -->
+
+                              <button type="submit"
+                                   class="btn btn-success w-25 waves-effect waves-light">Submit</button>
+                              </form>
+                              <!-- end row -->
+                         </div><!-- end cardbody -->
+                    </div><!-- end card -->
+               </div> <!-- end col -->
+          </div> <!-- end row -->
+     </div> <!-- container-fluid -->
+</div>
+{% endblock %}

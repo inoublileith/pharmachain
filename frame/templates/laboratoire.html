@@ -1,0 +1,96 @@
+{% extends 'layout.html' %} {% block content %}
+<div class="page-content">
+  <div class="container-fluid">
+    <!-- start page title -->
+    <div class="page-title-box">
+      <div class="row align-items-center">
+        <div class="col-md-8">
+          <h6 class="page-title">Laboratoires</h6>
+          <ol class="breadcrumb m-0">
+            <li class="breadcrumb-item"><a>Pharmachain</a></li>
+            <li class="breadcrumb-item"><a href="/home">Tables</a></li>
+            <li class="breadcrumb-item active" aria-current="page">
+              Laboratoires
+            </li>
+          </ol>
+        </div>
+        <div class="col-md-4">
+          <div class="float-end d-none d-md-block">
+            <div class="dropdown">
+              <button
+                class="btn btn-primary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="mdi mdi-cog me-2"></i> Settings
+              </button>
+              <div class="dropdown-menu dropdown-menu-end">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Separated link</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end page title -->
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <table
+              id="datatable-buttons"
+              class="table table-striped table-bordered dt-responsive"
+              style="border-collapse: collapse; border-spacing: 0; width: 100%"
+            >
+              <thead>
+                <tr>
+                  <th>Nom</th>
+                  <th>Gouvernorat</th>
+                  <th>Ville</th>
+                  <th width="15%">Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                {% for laboratoire in laboratoires : %}
+                <tr>
+                  <td>{{ laboratoire['nom'] }}</td>
+                  <td>{{ laboratoire['gouvernorat'] }}</td>
+                  <td>{{ laboratoire['ville'] }}</td>
+
+                  <td>
+                    <div class="button-list">
+                      <a
+                        href="/view_editlaboratoire?id={{ laboratoire['id'] }}"
+                        class="btn btn-success-rgba"
+                        >Edit</a
+                      >
+                      <a
+                        href="/laboratoire/delete/{{ laboratoire['id'] }}"
+                        onClick="return(confirm('Voulez-vous sur supprimer cette laboratoires?'))"
+                        class="btn btn-danger-rgba"
+                        >Delete</a
+                      >
+                    </div>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <!-- end col -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- container-fluid -->
+</div>
+{% endblock %}

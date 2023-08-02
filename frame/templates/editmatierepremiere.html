@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% block content %}		
+<div class="page-wrapper">
+			<div class="page-content-wrapper">
+				<div class="page-content">
+					<div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
+						<div class="breadcrumb-title pr-3">matierepremiere</div>
+						<div class="pl-3">
+							<nav aria-label="breadcrumb">
+								<ol class="breadcrumb mb-0 p-0">
+									<li class="breadcrumb-item"><a href="javascript:;"><i class='bx bx-home-alt'></i></a>
+									</li>
+									<li class="breadcrumb-item active" aria-current="page">liste des matierespremieres</li>
+								</ol>
+							</nav>
+						</div>
+					</div>
+					<div class="card radius-15">
+						<div class="card-body">
+							<div class="card-title">
+								<h4 class="mb-0">Modifier matierepremiere</h4>
+							</div>
+							<hr/>
+							 <form class="form-validate" method='post' enctype="multipart/form-data" action="/save_editmatierepremiere">
+								   <input type='hidden' name='id' value='{{ matierepremiere['id'] }}'>    
+                                     <div class="form-group row">  
+                                        <label class="col-md-3 label-control" for="userinput1">nom: </label>
+                                                    <div class="col-md-9">
+                                                         <input type="text" class="form-control" name="nom" value="{{ matierepremiere['nom'] }}" placeholder="Entrer les details "   required>
+                                                    </div>
+                                    </div>
+                                    <div class="form-group row">
+                                                    <label class="col-md-3 label-control" for="userinput1">type: </label>
+                                                    <div class="col-md-9">
+                                                         <input type="text" class="form-control" name="type" value="{{ matierepremiere['type'] }}" placeholder="Entrer les details "  required>
+                                                    </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-3 label-control" for="userinput1">composition: </label>
+                                        <div class="col-md-9">
+                                             <input type="text" class="form-control" name="composition" value="{{ matierepremiere['composition'] }}" placeholder="Entrer les details "  required>
+                                        </div>
+                        </div>
+                     
+                                    
+                                    <div class="form-group row">
+                                        <label class="col-lg-3 col-form-label"></label>
+                                        <div class="col-lg-8">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>                                  
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+{% endblock %} 
